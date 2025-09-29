@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plutoo – Richiesta eliminazione account</title>
+  <meta name="theme-color" content="#101022" />
+  <style>
+    :root{
+      --bg:#0b0a18; --card:#141329; --muted:#9aa3b2; --brand:#7a3cff; --brand2:#9e6bff;
+      --ok:#22c55e; --danger:#ef4444; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+      color:#eef1f5; background: radial-gradient(1200px 900px at 50% -10%, #221c48 0%, var(--bg) 55% , #07060f 100%);
+    }
+    .wrap{max-width:920px; margin:40px auto; padding:20px}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) , var(--card);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+      border-radius:24px; padding:28px; position:relative; overflow:hidden;
+    }
+    header{display:flex; gap:16px; align-items:center; margin-bottom:18px}
+    header img{width:56px; height:56px; border-radius:14px; box-shadow:0 6px 16px rgba(122,60,255,.35)}
+    h1{font-size:28px; margin:0}
+    .sub{color:var(--muted); margin-top:4px; font-size:14px}
+    .pill{
+      background: rgba(122,60,255,.14); border:1px solid rgba(122,60,255,.35);
+      color:#e7deff; padding:14px 16px; border-radius:14px; margin:14px 0 22px;
+    }
+    h2{font-size:18px; margin:22px 0 8px}
+    p{color:#d8dde6; line-height:1.55; margin:8px 0}
+    ul{margin:8px 0 14px 18px; color:#d8dde6}
+    .box{
+      background: rgba(255,255,255,.03); border:1px dashed rgba(255,255,255,.12);
+      border-radius:14px; padding:16px; margin-top:10px
+    }
+    .btn{
+      appearance:none; border:0; cursor:pointer; font-weight:600;
+      padding:14px 18px; border-radius:14px; transition:.15s transform ease;
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand2)); color:white}
+    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,.18); color:#eef1f5}
+    .grid{display:grid; gap:14px; grid-template-columns:1fr; margin-top:10px}
+    label{font-size:13px; color:var(--muted)}
+    input, textarea{
+      width:100%; background:#0e0d1f; color:#eef1f5; border:1px solid rgba(255,255,255,.12);
+      border-radius:12px; padding:12px 12px; outline:none
+    }
+    footer{margin-top:26px; display:flex; gap:12px; flex-wrap:wrap}
+    .muted{color:var(--muted); font-size:13px}
+    @media (min-width:720px){ .grid{grid-template-columns:1fr 1fr} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <img src="./plutoo-logo.png" alt="Logo Plutoo" />
+        <div>
+          <h1>Richiesta eliminazione account</h1>
+          <div class="sub">per l’app mobile <strong>Plutoo</strong></div>
+        </div>
+      </header>
+
+      <div class="pill">
+        <strong>In breve:</strong> qui puoi chiedere la <b>cancellazione definitiva</b> del tuo account e dei dati associati.
+        Dopo la richiesta, riceverai una conferma via email e l’eliminazione verrà completata nei tempi indicati sotto.
+      </div>
+
+      <h2>Come funziona</h2>
+      <ul>
+        <li>Compila i campi e premi <b>Invia richiesta</b> per aprire l’email precompilata.</li>
+        <li>Ti risponderemo entro <b>7 giorni</b> con conferma e tempi (massimo <b>30 giorni</b> per la cancellazione completa).</li>
+      </ul>
+
+      <div class="grid">
+        <div class="box">
+          <label>Email dell’account</label>
+          <input id="email" type="email" placeholder="es. nome@example.com" />
+          <label style="margin-top:10px">ID utente (se lo conosci)</label>
+          <input id="uid" type="text" placeholder="opzionale" />
+          <label style="margin-top:10px">Note (opzionale)</label>
+          <textarea id="note" rows="3" placeholder="Qualsiasi dettaglio utile…"></textarea>
+        </div>
+        <div class="box">
+          <p class="muted">
+            Cosa verrà eliminato: profilo e contenuti del tuo animale, chat, match, preferiti e impostazioni.
+            Potremmo conservare dati minimi e anonimi solo se richiesto dalla legge o per difesa in giudizio.
+          </p>
+          <p class="muted">Contatto DPO/Privacy: <a href="mailto:plutooteam@gmail.com">plutooteam@gmail.com</a></p>
+        </div>
+      </div>
+
+      <footer>
+        <a id="mailtoBtn" class="btn btn-primary" href="#">
+          ✉️ Invia richiesta
+        </a>
+        <a class="btn btn-ghost" href="./index.html">⬅︎ Torna alla Privacy</a>
+        <div class="muted">Versione 1.0 • Ultimo aggiornamento: <span id="d"></span></div>
+      </footer>
+
+      <script>
+        const btn = document.getElementById('mailtoBtn');
+        const d = document.getElementById('d');
+        d.textContent = new Date().toLocaleDateString('it-IT');
+
+        btn.addEventListener('click', (e) => {
+          const email = document.getElementById('email').value.trim();
+          const uid   = document.getElementById('uid').value.trim();
+          const note  = document.getElementById('note').value.trim();
+
+          const to = "plutooteam@gmail.com";
+          const subject = encodeURIComponent("Richiesta eliminazione account Plutoo");
+          const body = encodeURIComponent(
+`Chiedo l’eliminazione del mio account Plutoo.
+
+Email account: ${email || "(non indicata)"}
+ID utente: ${uid || "(non indicato)"}
+
+Note:
+${note || "(nessuna)"}`
+          );
+          const href = `mailto:${to}?subject=${subject}&body=${body}`;
+          btn.setAttribute('href', href);
+        });
+      </script>
+    </div>
+  </div>
+</body>
+</html>
