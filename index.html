@@ -1,185 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plutoo – Informativa sulla Privacy</title>
-  <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#5b36f5" />
   <style>
-    :root{
-      --bg:#0b0b12;
-      --panel:#121223;
-      --ink:#e9ecf1;
-      --muted:#b8bfd1;
-      --brand:#7a5cff;
-      --brand-2:#9e83ff;
-      --card:#15152a;
-      --border:#262642;
-      --ok:#38d39f;
-      --warn:#ffd166;
-      --link:#a9b5ff;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(180deg, #0f0f1a, #1a1a2e);
+      color: #fff;
+      line-height: 1.6;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:radial-gradient(1200px 700px at 50% -200px, #362066 0%, #121223 45%, #0b0b12 100%); color:var(--ink); font:16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";}
-    a{color:var(--link); text-decoration:none}
-    a:hover{opacity:.9; text-decoration:underline}
-    .wrap{max-width:920px; padding:28px 20px 80px; margin:0 auto}
-    .card{
-      background:linear-gradient(180deg, rgba(122,92,255,.12), rgba(122,92,255,.06)) , var(--panel);
-      border:1px solid var(--border); border-radius:20px; box-shadow:0 12px 40px rgba(0,0,0,.35);
-      overflow:hidden;
+    header {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      display: flex;
+      align-items: center;
     }
-    header{
-      padding:28px 24px 8px; display:flex; align-items:center; gap:16px; border-bottom:1px solid var(--border);
-      background:radial-gradient(600px 250px at 50% -120px, rgba(122,92,255,.35), transparent 70%);
+    header img.logo {
+      height: 60px;
+      margin-right: 15px;
+      border-radius: 12px;
     }
-    header img{
-      width:64px; height:64px; border-radius:18px; display:block; background:#0d0d18; object-fit:cover;
-      box-shadow:0 0 0 3px rgba(122,92,255,.2), 0 10px 30px rgba(122,92,255,.25);
+    header h1 {
+      font-size: 1.4rem;
+      margin: 0;
     }
-    header .title{display:flex; flex-direction:column}
-    header h1{margin:0; font-size:1.35rem; letter-spacing:.2px}
-    header .tag{margin-top:2px; color:var(--muted); font-size:.92rem}
-    .content{padding:18px 24px 28px}
-    h2{margin:28px 0 8px; font-size:1.1rem}
-    p{margin:10px 0}
-    ul{margin:8px 0 16px 20px}
-    .notice{
-      background:linear-gradient(180deg, rgba(56,211,159,.08), transparent);
-      border:1px solid rgba(56,211,159,.35); padding:12px 14px; border-radius:12px; color:#dff8ee;
+    header p {
+      font-size: 0.9rem;
+      margin: 2px 0 0 0;
+      color: #bbb;
     }
-    .muted{color:var(--muted)}
-    .grid-2{display:grid; grid-template-columns:1fr; gap:14px}
-    @media(min-width:760px){ .grid-2{grid-template-columns:1fr 1fr} }
-    footer{
-      padding:16px 24px 24px; border-top:1px solid var(--border); color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-      background:linear-gradient(180deg, transparent, rgba(122,92,255,.08));
+    main {
+      padding: 20px;
     }
-    .chip{display:inline-block; padding:4px 10px; background:#18183a; border:1px solid var(--border); border-radius:999px; font-size:.86rem; color:var(--muted)}
-    code{background:#1a1a34; padding:.12rem .4rem; border:1px solid var(--border); border-radius:6px}
+    section {
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 12px;
+    }
+    h2 {
+      color: #7fffd4;
+      margin-top: 0;
+    }
+    a {
+      color: #7fffd4;
+    }
+    .highlight {
+      background: rgba(127, 255, 212, 0.1);
+      border-left: 4px solid #7fffd4;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <article class="card" role="article">
-      <header>
-        <!-- Assicurati che questo file esista nella root del repo -->
-        <img src="plutoo-logo.png" alt="Logo Plutoo" />
-        <div class="title">
-          <h1>Informativa sulla Privacy</h1>
-          <div class="tag">per l’app mobile <strong>Plutoo</strong></div>
-        </div>
-      </header>
+  <header>
+    <img src="plutoo-logo.png" alt="Logo Plutoo" class="logo" />
+    <div>
+      <h1>Informativa sulla Privacy</h1>
+      <p>per l’app mobile <strong>Plutoo</strong></p>
+    </div>
+  </header>
+  <main>
+    <div class="highlight">
+      <strong>In breve:</strong> Plutoo aiuta a far incontrare i nostri amici a quattro zampe per accoppiamento o passeggiate. 
+      Raccogliamo il minimo necessario per far funzionare l’app in sicurezza e non vendiamo i tuoi dati.
+    </div>
 
-      <section class="content">
-        <p class="notice"><strong>In breve:</strong> Plutoo aiuta a far incontrare i nostri amici a quattro zampe per
-          amore e passeggiate. Raccogliamo il minimo necessario per far
-          funzionare l’app in sicurezza e non vendiamo i tuoi dati.</p>
+    <section>
+      <h2>1. Chi siamo</h2>
+      <p>Il Titolare del trattamento è <strong>Plutoo Team</strong> – contatto: <a href="mailto:plutooteam@gmail.com">plutooteam@gmail.com</a>.</p>
+    </section>
 
-        <h2>1. Chi siamo</h2>
-        <p>
-          Il Titolare del trattamento è <strong>Plutoo Team</strong> – contatto:
-          <a href="mailto:plutooteam@gmail.com">plutooteam@gmail.com</a>.
-        </p>
+    <section>
+      <h2>2. Dati che trattiamo</h2>
+      <p><strong>Dati dell’account</strong> (email, nome visualizzato, città/area generica).</p>
+      <p><strong>Profilo dell’animale</strong> (nome, razza, età, taglia, energia, descrizione e foto dell’animale). 
+      <em>Vietato caricare foto di persone come immagine profilo.</em></p>
+      <p><strong>Posizione</strong> (approssimata, se attivi i servizi di localizzazione) per mostrare profili vicini.</p>
+    </section>
 
-        <h2>2. Dati che trattiamo</h2>
-        <div class="grid-2">
-          <div>
-            <p><strong>Dati dell’account</strong> (email, nome visualizzato, città/area generica).</p>
-            <p><strong>Profilo dell’animale</strong> (nome, razza, età, taglia, energia, descrizione e
-               foto dell’animale). Vietato caricare foto di persone come immagine profilo.</p>
-            <p><strong>Posizione</strong> (approssimata, se attivi i servizi di localizzazione) per
-               mostrare profili vicini e distanza.</p>
-          </div>
-          <div>
-            <p><strong>Contenuti pubblicati</strong> (stati, foto aggiuntive dell’animale).</p>
-            <p><strong>Messaggistica</strong> (chat tra utenti) – conservata per erogare il servizio e
-               per prevenzione abusi.</p>
-            <p><strong>Dati tecnici</strong> (device, log, IP, identificatori) per sicurezza e
-               miglioramenti.</p>
-          </div>
-        </div>
+    <section>
+      <h2>3. Perché usiamo i dati</h2>
+      <ul>
+        <li>Per permettere la creazione e gestione del profilo.</li>
+        <li>Per mostrare cani vicini compatibili.</li>
+        <li>Per inviare notifiche utili sul servizio.</li>
+      </ul>
+    </section>
 
-        <h2>3. Finalità e basi giuridiche</h2>
-        <ul>
-          <li>Erogazione delle funzionalità dell’app (profilo, ricerca, chat, match) — <em>contratto</em>.</li>
-          <li>Geolocalizzazione per mostrare profili vicini — <em>consenso</em> (revocabile dal sistema).</li>
-          <li>Moderazione e sicurezza (antispam/abusi) — <em>legittimo interesse</em>.</li>
-          <li>Pagamento abbonamenti e gestione ricevute — <em>contratto</em>.</li>
-          <li>Statistiche aggregate e miglioramento — <em>legittimo interesse</em>.</li>
-        </ul>
+    <section>
+      <h2>4. Condivisione dei dati</h2>
+      <p>I dati non vengono venduti. Sono visibili solo ad altri utenti nei limiti del profilo creato.</p>
+    </section>
 
-        <h2>4. Abbonamenti e pagamenti</h2>
-        <p>
-          Le funzionalità premium (se attivate) sono gestite tramite gli store ufficiali (es. Google Play).
-          Gli abbonamenti si <strong>rinnovano automaticamente</strong> salvo disattivazione entro i tempi
-          indicati dallo store. Puoi gestire o annullare il rinnovo dalle impostazioni del tuo account di store.
-          Plutoo non conserva i dati completi della tua carta: l’elaborazione è affidata ai sistemi di pagamento dello store.
-        </p>
+    <section>
+      <h2>5. Abbonamenti Premium</h2>
+      <p>Gli abbonamenti si rinnovano automaticamente, salvo disattivazione tramite Google Play. 
+      Non sono previsti rimborsi per periodi già pagati.</p>
+    </section>
 
-        <h2>5. Condivisione con terzi</h2>
-        <p>
-          Non vendiamo i tuoi dati. Possiamo condividere informazioni con fornitori che ci aiutano a
-          erogare il servizio (hosting, analytics, moderazione), vincolati da accordi di trattamento.
-          Possiamo inoltre condividere dati se richiesto dalla legge o per tutelare diritti e sicurezza.
-        </p>
-
-        <h2>6. Conservazione</h2>
-        <p>
-          Conserviamo i dati per il tempo necessario a fornire il servizio e per gli obblighi di legge.
-          Puoi cancellare il tuo account dall’app: i contenuti pubblici potrebbero persistere in copie di backup
-          per un periodo limitato prima dell’eliminazione definitiva.
-        </p>
-
-        <h2>7. I tuoi diritti</h2>
-        <p>
-          Puoi esercitare i diritti di accesso, rettifica, cancellazione, limitazione, opposizione e portabilità
-          scrivendo a <a href="mailto:plutooteam@gmail.com">plutooteam@gmail.com</a>. Hai anche il diritto di
-          proporre reclamo all’autorità competente.
-        </p>
-
-        <h2>8. Minori</h2>
-        <p>
-          Plutoo è destinata a utenti di età pari o superiore a 14 anni (o età minime locali). Non raccogliamo consapevolmente
-          dati di minori che non soddisfano tale requisito.
-        </p>
-
-        <h2>9. Contenuti vietati e segnalazioni</h2>
-        <ul>
-          <li>Foto profilo: <strong>solo l’animale</strong> (niente volti umani in primo piano).</li>
-          <li>Contenuti offensivi/illegali/violenti: vietati; gli account possono essere sospesi o rimossi.</li>
-          <li>Pulsante/sezione di segnalazione in app o email a <a href="mailto:plutooteam@gmail.com">plutooteam@gmail.com</a>.</li>
-        </ul>
-
-        <h2>10. Trasferimenti extra-UE</h2>
-        <p>
-          Se usiamo fornitori in Paesi extra-UE, adottiamo garanzie adeguate (es. clausole contrattuali standard).
-        </p>
-
-        <h2>11. Sicurezza</h2>
-        <p>
-          Applichiamo misure tecniche e organizzative adeguate (crittografia in transito, controlli di accesso,
-          registri di sicurezza). Nessun sistema è però infallibile: segnala eventuali problemi a
-          <a href="mailto:plutooteam@gmail.com">plutooteam@gmail.com</a>.
-        </p>
-
-        <h2>12. Modifiche</h2>
-        <p>
-          Potremmo aggiornare questa informativa. Ti avviseremo in app o via email quando richiesto.
-        </p>
-
-        <p class="muted"><em>Ultimo aggiornamento:</em> 29 settembre 2025</p>
-      </section>
-
-      <footer>
-        <span class="chip">Plutoo © 2025</span>
-        <span>
-          <a href="mailto:plutooteam@gmail.com">Contatti</a> ·
-          <a href="#" aria-disabled="true" onclick="return false;">Termini d’uso (in arrivo)</a>
-        </span>
-      </footer>
-    </article>
+    <section>
+      <h2>6. I tuoi diritti</h2>
+      <p>Puoi scriverci per chiedere cancellazione o modifica dei tuoi dati all’indirizzo: 
+      <a href="mailto:plutooteam@gmail.com">plutooteam@gmail.com</a>.</p>
+    </section>
   </main>
 </body>
 </html>
